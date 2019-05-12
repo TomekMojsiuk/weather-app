@@ -1,0 +1,16 @@
+@import "../../../SCSS/Colors.scss";
+
+.btn--select--location {
+  width: 100px;
+  height: 25px;
+  margin: 10px 0;
+  border: 1px solid $main-borderColor;
+  border-radius: 5px;
+  background-color: $main-buttonColor;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: $hover-buttonColor;
+  }
+}

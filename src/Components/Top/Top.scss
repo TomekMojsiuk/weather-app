@@ -1,0 +1,16 @@
+@import "../../SCSS/Colors.scss";
+
+.top--container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  background: $topBackgroundColor;
+
+  .title {
+    color: $main-fontColor;
+    font-size: 1.5rem;
+    margin: 5px 0;
+  }
+}

@@ -1,0 +1,41 @@
+.weather--container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+
+  margin: 5px 0;
+
+  .location {
+  }
+
+  .weather--stats {
+    margin: 5px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    .weather--img {
+      height: 80px;
+      width: 80px;
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    .temperature {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2.5rem;
+      height: 80px;
+      width: 80px;
+
+      &::after {
+          content: "\00b0";
+      }
+    }
+  }
+}
