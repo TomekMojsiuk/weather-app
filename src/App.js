@@ -1,11 +1,14 @@
 import React from "react";
+import axios from 'axios';
 
 import Top from "./Components/Top/Top";
 import Bottom from "./Components/Bottom/Bottom";
 
 import "./App.scss";
 
-function App() {
+class App extends React.Component {
+
+  render () {
   return (
     <div className='app--container'>
       <div className='main--container'>
@@ -18,6 +21,7 @@ function App() {
       </div>
     </div>
   );
+  }
 }
 
 export default App;

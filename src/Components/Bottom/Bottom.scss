@@ -1,5 +1,11 @@
-@import '../../SCSS/Colors.scss';
+@import "../../SCSS/Colors.scss";
 
 .bottom--container {
-background: $bottomBackgroundColor;
+  height: 100%;
+  border-bottom-left-radius: 5px;   
+  border-bottom-right-radius: 5px;   
+  background: url("../../Assets/Thailand_small.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
