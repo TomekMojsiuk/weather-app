@@ -9,16 +9,19 @@ class Weather extends React.Component {
   }
 
   render() {
+
+    const {location, temp_c, isDay, text, iconURL} = this.props
+
     return (
       <div className='weather--container'>
-        <div className='location'>Choose Location</div>
+        <div className='location'>{location}</div>
 
         <div className='weather--stats'>
-          <div className='weather--img'><img src={this.props.img} alt='weather image'/></div>
-          <div className='temperature'>10</div>
+          <div className='weather--img'><img src={iconURL} alt='weather_image'/></div>
+          <div className='temperature'>{temp_c}</div>
         </div>
 
-        <div className='temperature'>It's cloudy today</div>
+        <div className='temperature'>{text}</div>
       </div>
     );
   }

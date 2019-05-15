@@ -7,9 +7,6 @@ import Button from "./Button/Button";
 class Top extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-        img: 'https://cdn2.iconfinder.com/data/icons/weather-color-2/500/weather-01-256.png',
-    };
   }
 
   render() {
@@ -17,7 +14,7 @@ class Top extends React.Component {
       <div className='top--container'>
         <div className='title'>My Weather</div>
         <div className='location'>
-          <Weather img={this.state.img} />
+          <Weather {...this.props} />
         </div>
         <Button />
       </div>
