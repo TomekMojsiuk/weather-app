@@ -26,4 +26,4 @@ The app shows current weather for chosen location. You can also see weather fore
 - git clone https://github.com/TomekMojsiuk/weather-app.git
 
 - Clone and download repository and install node_modules. Use **npm i**_
-- Run react app. Use npm start
+- Run react app. Use **npm start**
