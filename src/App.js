@@ -22,7 +22,7 @@ class App extends React.Component {
   componentDidMount() {
     const { location, forecastDays } = this.state;
 
-    const Url = `http://api.apixu.com/v1/forecast.json?key=${weatherKey} 
+    const Url = `https://api.apixu.com/v1/forecast.json?key=${weatherKey} 
                 &q=${location} 
                 &days=${forecastDays}`;
 
