@@ -1,22 +1,32 @@
-import React from "react";
+import React from 'react';
 
-import "./Top.scss";
-import Weather from "./Weather/Weather";
-import Button from "./Button/Button";
+import './Top.scss';
+import Weather from './Weather/Weather';
+import Button from './Button/Button';
 
 class Top extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      isSelectLocationOpen: false
+    }
+  }
+
+  onToggleSelectLocation = () => {
+    this.setState((prevState) => ({
+      isSelectLocationOpen: !prevState.isSelectLocationOpen
+    }))
+    console.log(this.state.isSelectLocationOpen)
   }
 
   render() {
     return (
-      <div className='top--container'>
-        <div className='title'>My Weather</div>
-        <div className='location'>
+      <div className="top--container">
+        <div className="title"></div>
+        <div className="location">
           <Weather {...this.props} />
         </div>
-        <Button />
+        <Button onClick={this.onToggleSelectLocation} />
       </div>
     );
   }

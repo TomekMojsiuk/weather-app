@@ -11,7 +11,7 @@ class Bottom extends React.Component {
     }
 
     render () {
-        return <div className='bottom--container'></div>
+        return <div className='bottom--container'><div className="bottom--container_shadow"></div></div>
     }
 }
 

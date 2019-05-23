@@ -1,8 +1,8 @@
-@import "SCSS/Colors.scss";
+@import 'SCSS/Colors.scss';
 
 * {
   box-sizing: border-box;
-  font-family: "Calibri", "sans-serif";
+  font-family: 'Calibri', 'sans-serif';
   color: $main-fontColor;
 }
 
@@ -11,21 +11,53 @@ body,
 #root {
   width: 100%;
   height: 100%;
+  background: -moz-linear-gradient(
+    top,
+    rgba(63, 76, 107, 0.79) 0%,
+    rgba(76, 94, 124, 0.79) 35%,
+    rgba(93, 116, 145, 0.94) 80%,
+    rgba(93, 116, 145, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    top,
+    rgba(63, 76, 107, 0.79) 0%,
+    rgba(76, 94, 124, 0.79) 35%,
+    rgba(93, 116, 145, 0.94) 80%,
+    rgba(93, 116, 145, 1) 100%
+  );
+  background: linear-gradient(
+    to bottom,
+    rgba(63, 76, 107, 0.79) 0%,
+    rgba(76, 94, 124, 0.79) 35%,
+    rgba(93, 116, 145, 0.94) 80%,
+    rgba(93, 116, 145, 1) 100%
+  );
 }
 
 .app--container {
   width: 100%;
   height: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @media all and (min-width: 640px) {
+    width: 100%;
+    height: 90%;
+  }
 
   .main--container {
     display: flex;
     flex-direction: column;
-    min-width: 700px;
-    max-width: 1000px;
-    height: 500px;
+    height: 100%;
+    width: 100%;
+
+    @media all and (min-width: 640px) {
+      min-width: 700px;
+      max-width: 1000px;
+      height: 90%;
+    }
 
     .top--section {
       flex: 0 0 50%;

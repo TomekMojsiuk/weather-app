@@ -6,7 +6,7 @@ class Button extends React.Component {
 
 
     render () {
-        return <button className='btn btn--select--location'>Select Location</button>
+        return <button className='btn btn--select--location' {...this.props} >Select Location</button>
     }
 }
 

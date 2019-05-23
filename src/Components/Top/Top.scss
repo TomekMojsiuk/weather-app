@@ -1,4 +1,4 @@
-@import "../../SCSS/Colors.scss";
+@import '../../SCSS/Colors.scss';
 
 .top--container {
   display: flex;
@@ -6,13 +6,13 @@
   flex-direction: column;
   height: 100%;
   width: 100%;
-  border-top-left-radius: 5px;   
-  border-top-right-radius: 5px;   
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
   background: $topBackgroundColor;
+  padding: 20px 0;
+  font-size: 3rem;
 
-  .title {
-    color: $main-fontColor;
-    font-size: 1.5rem;
-    margin: 5px 0;
+  @media all and (min-width: 640px) {
+    font-size: 1.2rem;
   }
 }
