@@ -1,6 +1,5 @@
 import React from 'react';
 import axios from 'axios';
-import Select from 'react-select'
 
 import Top from './Components/Top/Top';
 import Bottom from './Components/Bottom/Bottom';
@@ -34,6 +33,7 @@ class App extends React.Component {
       })
       .then((data) => {
         this.setState({
+          location: data.location.name,
           temp_c: data.current.temp_c,
           isDay: data.current.is_day,
           text: data.current.condition.text,
@@ -49,6 +49,7 @@ class App extends React.Component {
 
   render() {
     const { isLoading, location, temp_c, isDay, text, iconURL } = this.state;
+    console.log(this.state.location);
     return (
       <div className="app--container">
         <div className="main--container">
