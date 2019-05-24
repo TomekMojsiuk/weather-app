@@ -49,8 +49,7 @@ class Top extends React.Component {
           onSelectCity={this.onSelectCity}
           onEnter={this.onEnter}
         />
-        <div className="title" />
-        <div className="location">
+        <div className="">
           <Weather {...this.props} />
         </div>
       </div>

@@ -28,17 +28,23 @@ class App extends React.Component {
     axios
       .get(Url)
       .then((res) => {
-        return (res.data);
+        return res.data;
       })
       .then((data) => {
         this.setState({
           isLoading: false,
           location: data.location.name,
           temp_c: data.current.temp_c,
+          tempFeelsLike: data.current.feelslike_c,
           isDay: data.current.is_day,
           text: data.current.condition.text,
           iconURL: data.current.condition.icon,
-          forecastDays: data.forecast.forecastday
+          lastUpdate: data.current.last_updated,
+          wind: data.current.wind_kph,
+          windDirection: data.current.wind_dir,
+          pressure: data.current.pressure_mb,
+          humidity: data.current.humidity,
+          forecastDays: data.forecast.forecastday,
         });
       })
       .catch((error) => {
@@ -46,7 +52,6 @@ class App extends React.Component {
           console.log('Cannot fetch weather data from API', error);
         }
       });
-
   };
 
   componentDidMount() {
@@ -54,15 +59,34 @@ class App extends React.Component {
 
     this.updateWeather();
     eventEmitter.on('updateWeather', (data) => {
-      this.setState({
-        location: data,
-      }, () => this.updateWeather());
+      this.setState(
+        {
+          location: data,
+        },
+        () => this.updateWeather(),
+      );
     });
   }
 
   render() {
-    const { isLoading, location, temp_c, isDay, text, iconURL, forecastDays } = this.state;
+    const {
+      isLoading,
+      location,
+      temp_c,
+      tempFeelsLike,
+      isDay,
+      text,
+      iconURL,
+      forecastDays,
+      lastUpdate,
+      wind,
+      windDirection,
+      pressure,
+      humidity,
+    } = this.state;
+
     const { eventEmitter } = this.props;
+
     return (
       <div className="app--container">
         <div className="main--container">
@@ -72,9 +96,15 @@ class App extends React.Component {
               <Top
                 location={location}
                 temp_c={temp_c}
+                tempFeelsLike={tempFeelsLike}
                 isDay={isDay}
                 text={text}
                 iconURL={iconURL}
+                lastUpdate={lastUpdate}
+                wind={wind}
+                windDirection={windDirection}
+                pressure={pressure}
+                humidity={humidity}
                 eventEmitter={eventEmitter}
               />
             </div>
