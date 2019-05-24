@@ -1,0 +1,44 @@
+@import '../../../SCSS/Colors.scss';
+
+.forecast--day--container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  width: 95%;
+  margin: 10px 0 0 0;
+  border-radius: 5px;
+  box-shadow: 0 0 4px 2px rgba(15, 15, 15, 0.3);
+  background: $forecastDayBackgroundColor;
+  font-size: 1.3rem;
+  z-index: 1;
+
+  @media all and (min-width: 640px) {
+    padding: 10px 5px 0 5px;
+    justify-content: flex-start;
+    height: 200px;
+    width: 140px;
+    font-size: .8rem;
+  }
+
+  img {
+    height: 64px;
+    width: 64px;
+  }
+
+  .weather-stats-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    height: 100px;
+  }
+}
+
+.bottom--line {
+    margin: 10px;
+    width: 85%;
+    border-bottom: 1px solid $lineColor; 
+}

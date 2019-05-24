@@ -1,18 +1,27 @@
-import React from 'react'
+import React from 'react';
+import ForecastDay from './ForecastDay/ForecastDay';
 
-import './Bottom.scss'
+import './Bottom.scss';
 
 class Bottom extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
 
-        }
-    }
-
-    render () {
-        return <div className='bottom--container'><div className="bottom--container_shadow"></div></div>
-    }
+  render() {
+    const { forecastDays } = this.props;
+    console.log(forecastDays);
+    return (
+      <div className="bottom--container">
+        <div className="bottom--container_shadow" />
+        {forecastDays &&
+          forecastDays.map((day, index) => {
+            return <ForecastDay key={index} day={day} />;
+          })}
+      </div>
+    );
+  }
 }
 
-export default Bottom
+export default Bottom;

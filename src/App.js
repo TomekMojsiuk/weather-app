@@ -13,17 +13,17 @@ class App extends React.Component {
     super(props);
     this.state = {
       location: 'Gdansk',
-      forecastDays: '5',
+      numberOfForecastDays: '5',
       isLoading: true,
     };
   }
 
   updateWeather = () => {
-    const { location, forecastDays } = this.state;
+    const { location, numberOfForecastDays } = this.state;
 
     const Url = `https://api.apixu.com/v1/forecast.json?key=${weatherKey} 
       &q=${location} 
-      &days=${forecastDays}`;
+      &days=${numberOfForecastDays}`;
 
     axios
       .get(Url)
@@ -33,11 +33,13 @@ class App extends React.Component {
       })
       .then((data) => {
         this.setState({
+          isLoading: false,
           location: data.location.name,
           temp_c: data.current.temp_c,
           isDay: data.current.is_day,
           text: data.current.condition.text,
           iconURL: data.current.condition.icon,
+          forecastDays: data.forecast.forecastday
         });
       })
       .catch((error) => {
@@ -61,13 +63,14 @@ class App extends React.Component {
   }
 
   render() {
-    const { isLoading, location, temp_c, isDay, text, iconURL } = this.state;
+    const { isLoading, location, temp_c, isDay, text, iconURL, forecastDays } = this.state;
+    console.log(forecastDays)
     const { eventEmitter } = this.props;
     return (
       <div className="app--container">
         <div className="main--container">
           {/* { isLoading && <h1>Loading weather data...</h1> } */}
-          {isLoading && (
+          {!isLoading && (
             <div className="top--section">
               <Top
                 location={location}
@@ -80,7 +83,7 @@ class App extends React.Component {
             </div>
           )}
           <div className="bottom--section">
-            <Bottom />
+            <Bottom forecastDays={forecastDays} />
           </div>
         </div>
       </div>

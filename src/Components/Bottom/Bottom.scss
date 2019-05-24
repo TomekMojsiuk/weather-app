@@ -1,6 +1,11 @@
 @import "../../SCSS/Colors.scss";
 
 .bottom--container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
   height: 100%;
   border-bottom-left-radius: 5px;   
   border-bottom-right-radius: 5px;   
@@ -8,9 +13,16 @@
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  
+  @media all and (min-width: 640px) {
+    justify-content: center;
+    flex-direction: row;
+    justify-content: space-around;
+  }
 }
 
 .bottom--container_shadow {
+  position: absolute;
   width: 100%;
   height: 100%;
   background: rgba(32, 55, 105, 0.315);
