@@ -24,11 +24,11 @@ class Top extends React.Component {
 
     return (
       <div className="top--container">
+        <Button onToggleSelectLocation={this.onToggleSelectLocation} isSelectLocationOpen={this.state.isSelectLocationOpen} />
         <div className="title"></div>
         <div className="location">
           <Weather {...this.props} />
         </div>
-      <Button onToggleSelectLocation={this.onToggleSelectLocation} isSelectLocationOpen={this.state.isSelectLocationOpen} />
       </div>
     );
   }

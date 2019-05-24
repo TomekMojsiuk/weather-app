@@ -1,0 +1,70 @@
+@import '../../../SCSS/Colors.scss';
+
+.popup {
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+  width: 95%;
+  top: 15% !important;
+  background: $popupBackgroundColor;
+  box-shadow: 0 0 3px 1px rgba(15, 15, 15, 0.3);
+  border-radius: 5px;
+  transition: all 0.2s ease-in-out;
+
+  @media all and (min-width: 640px) {
+    position: fixed;
+    height: 50%;
+    width: 50%;
+    top: 5% !important;
+  }
+
+  .popup--close {
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    top: 10px;
+    right: 20px;
+    border: none;
+    transition: all 0.3s ease-in-out;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      height: 25px;
+      // width: 1px;
+      border: 1px solid $main-buttonColor;
+      transition: all 0.3s ease-in-out;
+      left: calc(45%);
+    }
+
+    &::before {
+      transform: rotate(45deg);
+    }
+    &::after {
+      transform: rotate(-45deg);
+    }
+
+    &:hover::before,
+    &:hover::after {
+      border: 1px solid $hover-buttonColor;
+    }
+
+    &:hover {
+      transform: rotate(180deg);
+    }
+
+    @media all and (min-width: 640px) {
+      height: 13px;
+      width: 13px;
+
+      &::before,
+      &::after {
+        height: 12px;
+      }
+    }
+  }
+}

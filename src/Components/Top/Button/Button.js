@@ -2,6 +2,8 @@ import React from 'react';
 import { Manager, Reference, Popper } from 'react-popper';
 
 import './Button.scss';
+import './Popup.scss';
+import './SelectLocationForm.scss';
 
 class Button extends React.Component {
   render() {
@@ -22,13 +24,25 @@ class Button extends React.Component {
               </button>
             )}
           </Reference>
-          <Popper placement="top">
-            {({ ref, style, placement, arrowProps }) => ( isSelectLocationOpen &&
-              <div ref={ref} style={style} data-placement={placement}>
-                Hi there, I'm a popup
-                <div ref={arrowProps.ref} style={arrowProps.style} />
-              </div>
-            )}
+          <Popper placement="top" positionFixed={true}>
+            {({ ref, style, placement, arrowProps }) =>
+              isSelectLocationOpen && (
+                <div
+                  className="popup"
+                  ref={ref}
+                  style={style}
+                  data-placement={placement}
+                >
+                  <div className="popup--close" onClick={onToggleSelectLocation} />
+                  <div className="form--container">
+                      <label htmlFor="location-name">Location Name</label>
+                      <input id="location-name" type="text" placeholder="City Name"/>
+                      <button className="btn btn--select--location">Select</button>
+                  </div>
+                  <div ref={arrowProps.ref} style={arrowProps.style} />
+                </div>
+              )
+            }
           </Popper>
         </Manager>
       </div>

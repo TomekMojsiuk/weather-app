@@ -59,11 +59,17 @@ body,
     }
 
     .top--section {
-      flex: 0 0 50%;
+      flex: 0 0 100%;
+      @media all and (min-width: 640px) {
+        flex: 0 0 50%;
+      }
     }
 
     .bottom--section {
-      flex: 0 0 50%;
+      flex: 0 0 100%;
+      @media all and (min-width: 640px) {
+        flex: 0 0 50%;
+      }
     }
   }
 }
