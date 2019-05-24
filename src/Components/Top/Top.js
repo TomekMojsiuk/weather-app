@@ -16,7 +16,6 @@ class Top extends React.Component {
     this.setState((prevState) => ({
       isSelectLocationOpen: !prevState.isSelectLocationOpen,
     }));
-    console.log(this.state.isSelectLocationOpen);
   };
 
   onLocationNameChange = (e) => {

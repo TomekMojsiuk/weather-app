@@ -11,27 +11,31 @@ body,
 #root {
   width: 100%;
   height: 100%;
-  background: -moz-linear-gradient(
-    top,
-    rgba(63, 76, 107, 0.79) 0%,
-    rgba(76, 94, 124, 0.79) 35%,
-    rgba(93, 116, 145, 0.94) 80%,
-    rgba(93, 116, 145, 1) 100%
-  );
-  background: -webkit-linear-gradient(
-    top,
-    rgba(63, 76, 107, 0.79) 0%,
-    rgba(76, 94, 124, 0.79) 35%,
-    rgba(93, 116, 145, 0.94) 80%,
-    rgba(93, 116, 145, 1) 100%
-  );
-  background: linear-gradient(
-    to bottom,
-    rgba(63, 76, 107, 0.79) 0%,
-    rgba(76, 94, 124, 0.79) 35%,
-    rgba(93, 116, 145, 0.94) 80%,
-    rgba(93, 116, 145, 1) 100%
-  );
+  background: url("./Assets/clouds_small.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  // background: -moz-linear-gradient(
+  //   top,
+  //   rgba(63, 76, 107, 0.79) 0%,
+  //   rgba(76, 94, 124, 0.79) 35%,
+  //   rgba(93, 116, 145, 0.94) 80%,
+  //   rgba(93, 116, 145, 1) 100%
+  // );
+  // background: -webkit-linear-gradient(
+  //   top,
+  //   rgba(63, 76, 107, 0.79) 0%,
+  //   rgba(76, 94, 124, 0.79) 35%,
+  //   rgba(93, 116, 145, 0.94) 80%,
+  //   rgba(93, 116, 145, 1) 100%
+  // );
+  // background: linear-gradient(
+  //   to bottom,
+  //   rgba(63, 76, 107, 0.79) 0%,
+  //   rgba(76, 94, 124, 0.79) 35%,
+  //   rgba(93, 116, 145, 0.94) 80%,
+  //   rgba(93, 116, 145, 1) 100%
+  // );
 }
 
 .app--container {

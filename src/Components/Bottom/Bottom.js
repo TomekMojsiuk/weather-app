@@ -11,7 +11,6 @@ class Bottom extends React.Component {
 
   render() {
     const { forecastDays } = this.props;
-    console.log(forecastDays);
     return (
       <div className="bottom--container">
         <div className="bottom--container_shadow" />

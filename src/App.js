@@ -28,7 +28,6 @@ class App extends React.Component {
     axios
       .get(Url)
       .then((res) => {
-        console.log('Data: ', res);
         return (res.data);
       })
       .then((data) => {
@@ -58,13 +57,11 @@ class App extends React.Component {
       this.setState({
         location: data,
       }, () => this.updateWeather());
-      console.log('locationName:', data);
     });
   }
 
   render() {
     const { isLoading, location, temp_c, isDay, text, iconURL, forecastDays } = this.state;
-    console.log(forecastDays)
     const { eventEmitter } = this.props;
     return (
       <div className="app--container">

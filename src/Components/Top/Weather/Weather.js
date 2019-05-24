@@ -11,7 +11,7 @@ class Weather extends React.Component {
   render() {
 
     const {location, temp_c, isDay, text, iconURL} = this.props
-
+    
     return (
       <div className='weather--container'>
         <div className='location'>{location}</div>
