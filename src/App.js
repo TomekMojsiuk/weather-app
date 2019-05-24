@@ -18,18 +18,18 @@ class App extends React.Component {
     };
   }
 
-  componentDidMount() {
+  updateWeather = () => {
     const { location, forecastDays } = this.state;
 
     const Url = `https://api.apixu.com/v1/forecast.json?key=${weatherKey} 
-                &q=${location} 
-                &days=${forecastDays}`;
+      &q=${location} 
+      &days=${forecastDays}`;
 
     axios
       .get(Url)
       .then((res) => {
         console.log('Data: ', res);
-        return res.data;
+        return (res.data);
       })
       .then((data) => {
         this.setState({
@@ -45,11 +45,24 @@ class App extends React.Component {
           console.log('Cannot fetch weather data from API', error);
         }
       });
+
+  };
+
+  componentDidMount() {
+    const { eventEmitter } = this.props;
+
+    this.updateWeather();
+    eventEmitter.on('updateWeather', (data) => {
+      this.setState({
+        location: data,
+      }, () => this.updateWeather());
+      console.log('locationName:', data);
+    });
   }
 
   render() {
     const { isLoading, location, temp_c, isDay, text, iconURL } = this.state;
-    console.log(this.state.location);
+    const { eventEmitter } = this.props;
     return (
       <div className="app--container">
         <div className="main--container">
@@ -62,6 +75,7 @@ class App extends React.Component {
                 isDay={isDay}
                 text={text}
                 iconURL={iconURL}
+                eventEmitter={eventEmitter}
               />
             </div>
           )}

@@ -7,7 +7,7 @@ import './SelectLocationForm.scss';
 
 class Button extends React.Component {
   render() {
-    const { onToggleSelectLocation, isSelectLocationOpen } = this.props;
+    const { onToggleSelectLocation, isSelectLocationOpen, onSelectCity, onLocationNameChange, onEnter } = this.props;
 
     return (
       <div>
@@ -36,8 +36,10 @@ class Button extends React.Component {
                   <div className="popup--close" onClick={onToggleSelectLocation} />
                   <div className="form--container">
                       <label htmlFor="location-name">Location Name</label>
-                      <input id="location-name" type="text" placeholder="City Name"/>
-                      <button className="btn btn--select--location">Select</button>
+                      <input id="location-name" type="text" placeholder="City Name" 
+                      onChange={onLocationNameChange} 
+                      onKeyPress={onEnter}/>
+                      <button className="btn btn--select--location" onClick={onSelectCity}>Select</button>
                   </div>
                   <div ref={arrowProps.ref} style={arrowProps.style} />
                 </div>
