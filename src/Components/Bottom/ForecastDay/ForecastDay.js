@@ -48,7 +48,9 @@ class ForecastDay extends React.Component {
           <div className="img">
             <img src={day.day.condition.icon} alt="forecast img" />
           </div>
-          <div className="weather">{day.day.condition.text}</div>
+          <div className="tmeperature">Max: {day.day.maxtemp_c}</div>
+          <div className="tmeperature">Min: {day.day.mintemp_c}</div>
+          <div className="weather--description">{day.day.condition.text}</div>
         </div>
         <div className="bottom--line" />
       </div>
