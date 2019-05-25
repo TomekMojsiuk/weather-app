@@ -1,6 +1,8 @@
 # Weather forecast
 
-The app shows current weather for chosen location. You can also see weather forecast for the next week. 
+https://tm-weather.netlify.com/
+
+The app shows current weather for chosen location. You can also see weather forecast for the next week.
 
 # Technologies and tools:
 
