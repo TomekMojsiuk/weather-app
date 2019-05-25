@@ -2,6 +2,7 @@
 .weather {
   text-align: center;
 }
+
 .weather--boxes {
   display: flex;
   flex-direction: column;
@@ -77,12 +78,17 @@
 
 }
 
+.weather--description {
+font-size: 1.3rem;
+}
+
 .description {
    
   height: inherit;
   align-items: flex-start;
   justify-content: space-evenly;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  padding: 5px;
   
   @media all and (min-width: 640px) {
     font-size: 1rem;
