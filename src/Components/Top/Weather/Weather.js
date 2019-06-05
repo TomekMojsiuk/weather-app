@@ -12,7 +12,7 @@ class Weather extends React.Component {
     const {
       location,
       temp_c,
-      isDay,
+      //isDay,
       text,
       iconURL,
       tempFeelsLike,
