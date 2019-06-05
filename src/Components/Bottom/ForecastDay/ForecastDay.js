@@ -41,7 +41,7 @@ class ForecastDay extends React.Component {
       <div className="forecast--day--container">
         <div className="date">{weekDay}</div>
         <div className="date">
-          {date.getDate() + 1}.{date.getMonth()}.{date.getFullYear()}
+          {date.getDate() + 1}.{date.getMonth() + 1}.{date.getFullYear()}
         </div>
         <div className="bottom--line" />
         <div className="weather-stats-container">
